@@ -36,4 +36,6 @@ X$activity <- Y$name
 # "Creates a second, independent tidy data set with the average of each 
 # variable for each activity and each subject"
 X$subject <- rbind(train_subj, test_subj)$subject
-sitds <-aggregate(X, by=list(activity=X$activity, subject=X$subject), FUN=mean)
+sitds <- aggregate(X, by=list(activity=X$activity, subject=X$subject), FUN=mean)
+write.table(x=sitds, file="sitds.txt")
+
